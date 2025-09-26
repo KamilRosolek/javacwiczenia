@@ -72,7 +72,42 @@ public class Main {
             rata += 0.1 * rata;
             System.out.println("Miesięczna rata wynosi: " + rata + " zł.");
         }
+        // Zadanie 6
+        double a, b, wynik;
+        char dzialanie;
+        Scanner calc = new Scanner(System.in);
+        System.out.println("Prosty kalkulator - dodawanie, odejmowanie, mnożenie i dzielenie.");
+        System.out.println("Wpisz pierwszą liczbę: ");
+        a = calc.nextDouble();
+        System.out.println("Wpisz działanie (+, -, *, /): ");
+        dzialanie = calc.next().charAt(0);
+        System.out.println("Wpisz drugą liczbę: ");
+        b = calc.nextDouble();
 
+        switch (dzialanie) {
+            case '+':
+                wynik = a + b;
+                System.out.println("Wynik: " + wynik);
+                break;
+            case '-':
+                wynik = a - b;
+                System.out.println("Wynik: " + wynik);
+                break;
+            case '*':
+                wynik = a * b;
+                System.out.println("Wynik: " + wynik);
+                break;
+            case '/':
+                if (b == 0) {
+                    System.out.println("Błąd: nie można dzielić przez zero!");
+                } else {
+                    wynik = a / b;
+                    System.out.println("Wynik: " + wynik);
+                }
+                break;
+            default:
+                System.out.println("Błędny symbol działania!");
+        }
     }
 
 }
