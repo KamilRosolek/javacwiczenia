@@ -37,6 +37,42 @@ public class Main {
             result = " - Nadwaga.";
     }
         System.out.println("BMI wynosi: " + bmiData[2] + result);
+
+        // Zadanie 4
+        double income, tax;
+        Scanner netIncome = new Scanner(System.in);
+        System.out.println("Wpisz swój dochód (w zł): ");
+        income = netIncome.nextDouble();
+        if (income <= 85528) {
+            tax = 0.18 * income - 556.02;
+        } else {
+            tax = 0.32 * (income - 85528) + 14839.02;
+        }
+        System.out.println("Twój podatek wynosi: " + tax + " zł.");
+
+        // Zadanie 5
+        double cena, rata;
+        int liczbaRat;
+        Scanner kalkRat = new Scanner(System.in);
+        System.out.println("Wpisz cenę zakupu (100 zł - 1k zł) oraz liczbę rat (od 6 do 48): ");
+        cena = kalkRat.nextDouble();
+        liczbaRat = kalkRat.nextInt();
+        if (cena <= 100 || cena >= 10000 || liczbaRat < 6 || liczbaRat > 48 ) {
+            System.out.println("Błędne dane. Wpisz dane ponownie zgodnie z zakresem.");
+        } else if (liczbaRat <= 12) {
+            rata = (cena / liczbaRat);
+            rata += 0.025 * rata;
+            System.out.println("Miesięczna rata wynosi: " + rata + " zł.");
+        } else if (liczbaRat <= 24){
+            rata = (cena / liczbaRat);
+            rata += 0.05 * rata;
+            System.out.println("Miesięczna rata wynosi: " + rata + " zł.");
+        } else {
+            rata = (cena / liczbaRat);
+            rata += 0.1 * rata;
+            System.out.println("Miesięczna rata wynosi: " + rata + " zł.");
+        }
+
     }
 
 }
